@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Name cannot be blank"
+              too_long: "Name is too long (maximum is %{count} characters)"
+            email:
+              blank: "Email cannot be blank"
+              too_long: "Email is too long (maximum is %{count} characters)"
+              invalid: "Email format is invalid"
+              taken: "Email has already been taken"
+            birthday:
+              blank: "Birthday cannot be blank"
+              inclusion: "Birthday must be within the last 100 years"
+            password:
+              too_short: "Password is too short (minimum is %{count} characters)"
