@@ -1,0 +1,19 @@
+vi:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+              too_long: "Tên quá dài (tối đa %{count} ký tự)"
+            email:
+              blank: "Email không được để trống"
+              too_long: "Email quá dài (tối đa %{count} ký tự)"
+              invalid: "Định dạng email không hợp lệ"
+              taken: "Email đã được sử dụng"
+            birthday:
+              blank: "Ngày sinh không được để trống"
+              inclusion: "Ngày sinh phải trong vòng 100 năm gần đây"
+            password:
+              too_short: "Mật khẩu quá ngắn (tối thiểu %{count} ký tự)"
