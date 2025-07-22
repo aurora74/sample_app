@@ -6,7 +6,8 @@
         <li><%= link_to t("navigation.home"), root_path %></li>
         <li><%= link_to t("navigation.microposts"), microposts_path %></li>
         <li><%= link_to t("navigation.help"), help_path %></li>
-        <li><%= link_to t("navigation.login"), "#" %></li>
+        <li><%= link_to t("navigation.signup"), signup_path %></li>
+        <li><%= link_to t("navigation.login"), "#", class: "disabled" %></li>
         <li><%= link_to_locale(:en) %></li>
         <li><%= link_to_locale(:vi) %></li>
       </ul>

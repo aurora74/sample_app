@@ -1,19 +1,29 @@
 vi:
   activerecord:
+    attributes:
+      user:
+        name: "Tên"
+        email: "Email"
+        birthday: "Ngày sinh"
+        gender: "Giới tính"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
     errors:
       models:
         user:
           attributes:
             name:
-              blank: "Tên không được để trống"
-              too_long: "Tên quá dài (tối đa %{count} ký tự)"
+              blank: "không được để trống"
+              too_long: "quá dài (tối đa %{count} ký tự)"
             email:
-              blank: "Email không được để trống"
-              too_long: "Email quá dài (tối đa %{count} ký tự)"
-              invalid: "Định dạng email không hợp lệ"
-              taken: "Email đã được sử dụng"
+              blank: "không được để trống"
+              too_long: "quá dài (tối đa %{count} ký tự)"
+              invalid: "không hợp lệ"
+              taken: "đã được sử dụng"
             birthday:
-              blank: "Ngày sinh không được để trống"
-              inclusion: "Ngày sinh phải trong vòng 100 năm gần đây"
+              blank: "không được để trống"
+              inclusion: "phải trong vòng 100 năm gần đây"
+            gender:
+              blank: "không được để trống"
             password:
-              too_short: "Mật khẩu quá ngắn (tối thiểu %{count} ký tự)"
+              too_short: "quá ngắn (tối thiểu %{count} ký tự)"

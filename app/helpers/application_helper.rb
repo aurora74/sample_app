@@ -11,4 +11,21 @@ module ApplicationHelper
 
     link_to locale_name, url_for(locale: locale_key), class: css_class
   end
+
+  def alert_class_for message_type
+    case message_type.to_s.to_sym
+    when :success
+      Settings.alert.success
+    when :error
+      Settings.alert.error
+    when :danger
+      Settings.alert.danger
+    when :warning
+      Settings.alert.warning
+    when :info
+      Settings.alert.info
+    else
+      "alert-#{message_type}"
+    end
+  end
 end

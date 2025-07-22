@@ -29,6 +29,14 @@ email:
   from_address: "noreply@railstutorial.org"
   support_address: "support@railstutorial.org"
 
+# Cấu hình alert classes
+alert:
+  success: "alert-success"
+  error: "alert-danger"
+  danger: "alert-danger"
+  warning: "alert-warning"
+  info: "alert-info"
+
 # Cấu hình social links
 social:
   twitter: "https://twitter.com/railstutorial"
@@ -43,6 +51,8 @@ urls:
   help: "http://www.railstutorial.org/help"
   book: "http://www.railstutorial.org/book"
   news: "https://news.railstutorial.org/"
+  gravatar: "https://secure.gravatar.com/avatar/"
+  rails: "https://rubyonrails.org/"
 
 # Cấu hình cache
 cache:
