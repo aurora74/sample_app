@@ -13,6 +13,16 @@ gender).freeze
 
   before_save{self.email = email.downcase}
 
+  # Return the hash digest of the given string.
+  def User.digest string
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+    BCrypt::Password.create(string, cost: cost)
+  end
+
   validates :name, presence: true,
                    length: {maximum: MAX_NAME_LENGTH}
   validates :email, presence: true,
