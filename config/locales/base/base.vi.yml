@@ -11,6 +11,10 @@ vi:
     news: "Tin tức"
     login: "Đăng nhập"
     signup: "Đăng ký ngay!"
+    account: "Tài khoản"
+    profile: "Hồ sơ"
+    settings: "Cài đặt"
+    logout: "Đăng xuất"
   pages:
     home:
       welcome: "Chào mừng đến với Ứng dụng Mẫu"
