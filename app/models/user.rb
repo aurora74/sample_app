@@ -13,14 +13,50 @@ gender).freeze
 
   before_save{self.email = email.downcase}
 
-  # Return the hash digest of the given string.
-  def User.digest string
-    cost = if ActiveModel::SecurePassword.min_cost
-             BCrypt::Engine::MIN_COST
-           else
-             BCrypt::Engine.cost
-           end
-    BCrypt::Password.create(string, cost: cost)
+  attr_accessor :remember_token, :session_token
+
+  class << self
+    def digest string
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create(string, cost:)
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    # Khi remember, overwrite session_token bằng remember_token trong remember_digest
+    update_column(:remember_digest, User.digest(remember_token))
+  end
+
+  def forget
+    update_column(:remember_digest, nil)
+    self.remember_token = nil
+  end
+
+  def generate_session_token
+    self.session_token = User.new_token
+    # Khi login, update remember_digest với session_token để validate session
+    update_column(:remember_digest, User.digest(session_token))
+  end
+
+  def forget_session
+    # Clear remember_digest khi logout
+    update_column(:remember_digest, nil)
+    self.session_token = nil
+  end
+
+  def authenticated? token
+    return false if remember_digest.nil?
+
+    BCrypt::Password.new(remember_digest).is_password?(token)
   end
 
   validates :name, presence: true,

@@ -24,6 +24,11 @@ micropost:
   allowed_image_types: ["jpg", "jpeg", "gif", "png"]
   max_image_size: 5 # MB
 
+# Cấu hình session
+session:
+  remember_me_value: "1"
+  remember_token_expires: 2592000 # 30 days in seconds
+
 # Cấu hình email
 email:
   from_address: "noreply@railstutorial.org"
