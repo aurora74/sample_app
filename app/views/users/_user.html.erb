@@ -1,0 +1,9 @@
+<li>
+  <%= gravatar_for user, size: UsersHelper::GRAVATAR_SMALL_SIZE %>
+  <%= link_to user.name, user %>
+  <% if can_delete_user?(user) %>
+    | <%= link_to t(".delete"), user, data: { "turbo-method": :delete,
+                                               turbo_confirm: t(".delete_confirmation") },
+                  class: "text-danger" %>
+  <% end %>
+</li>

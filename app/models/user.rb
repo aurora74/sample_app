@@ -11,6 +11,8 @@ gender).freeze
 
   enum gender: {female: 0, male: 1, other: 2}
 
+  scope :latest_first, -> {order(created_at: :desc)}
+
   before_save{self.email = email.downcase}
 
   attr_accessor :remember_token, :session_token
@@ -32,7 +34,8 @@ gender).freeze
 
   def remember
     self.remember_token = User.new_token
-    # Khi remember, overwrite session_token bằng remember_token trong remember_digest
+    # When remembering, overwrite session_token with
+    # remember_token in remember_digest
     update_column(:remember_digest, User.digest(remember_token))
   end
 
@@ -43,7 +46,7 @@ gender).freeze
 
   def generate_session_token
     self.session_token = User.new_token
-    # Khi login, update remember_digest với session_token để validate session
+    # When logging in, update remember_digest with session_token to validate
     update_column(:remember_digest, User.digest(session_token))
   end
 

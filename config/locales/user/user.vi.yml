@@ -1,5 +1,9 @@
 vi:
   users:
+    index:
+      title: "Tất cả người dùng"
+      age: "%{age} tuổi"
+      member_since: "Thành viên từ %{date}"
     new:
       title: "Đăng ký"
       name: "Tên"
@@ -12,11 +16,34 @@ vi:
     create:
       user_created_successfully: "Chào mừng! Tài khoản của bạn đã được tạo thành công."
       user_creation_failed: "Có lỗi xảy ra khi tạo tài khoản. Vui lòng kiểm tra các lỗi bên dưới."
+    edit:
+      title: "Cập nhật hồ sơ"
+      name: "Tên"
+      email: "Email"
+      birthday: "Ngày sinh"
+      gender: "Giới tính"
+      select_gender: "Chọn giới tính"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận"
+      save_changes: "Lưu thay đổi"
+      change_gravatar: "Thay đổi"
+      user_not_found: "Không tìm thấy người dùng."
+    update:
+      user_updated_successfully: "Hồ sơ đã được cập nhật thành công!"
+      user_update_failed: "Có lỗi xảy ra khi cập nhật hồ sơ. Vui lòng kiểm tra các lỗi bên dưới."
+      user_not_found: "Không tìm thấy người dùng."
     show:
       profile: "Hồ sơ"
       user_not_found: "Không tìm thấy người dùng."
       created_at: "Thành viên từ"
       updated_at: "Cập nhật lần cuối"
+      edit_profile: "Chỉnh sửa hồ sơ"
+    destroy:
+      user_deleted_successfully: "Người dùng đã được xóa thành công."
+      delete_failed: "Xóa thất bại!"
+    user:
+      delete: "xóa"
+      delete_confirmation: "Bạn có chắc chắn không?"
     gender:
       female: "Nữ"
       male: "Nam"

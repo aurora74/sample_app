@@ -5,6 +5,7 @@ vi:
   navigation:
     home: "Trang chủ"
     microposts: "Microposts"
+    users: "Người dùng"
     help: "Trợ giúp"
     about: "Giới thiệu"
     contact: "Liên hệ"
@@ -15,6 +16,10 @@ vi:
     profile: "Hồ sơ"
     settings: "Cài đặt"
     logout: "Đăng xuất"
+  application:
+    please_log_in: "Vui lòng đăng nhập."
+    access_denied: "Truy cập bị từ chối."
+    admin_required: "Cần quyền quản trị viên."
   pages:
     home:
       welcome: "Chào mừng đến với Ứng dụng Mẫu"

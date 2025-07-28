@@ -18,6 +18,10 @@ pagination:
   default_per_page: 10
   max_per_page: 100
 
+# Cấu hình pagy
+pagy:
+  page_10: 10
+
 # Cấu hình micropost
 micropost:
   max_content_length: 140
@@ -57,6 +61,7 @@ urls:
   book: "http://www.railstutorial.org/book"
   news: "https://news.railstutorial.org/"
   gravatar: "https://secure.gravatar.com/avatar/"
+  gravatar_edit: "https://gravatar.com/emails"
   rails: "https://rubyonrails.org/"
 
 # Cấu hình cache
