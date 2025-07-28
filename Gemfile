@@ -60,12 +60,17 @@ gem "sassc-rails", "2.1.2"
 
 gem "bcrypt", "3.1.18"
 
+# Pagination
+gem "pagy", "9.3.3"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
+  # Generate fake data for seeding
+  gem "faker", "~> 3.2"
 end
 
 group :development do

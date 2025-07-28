@@ -1,5 +1,9 @@
 en:
   users:
+    index:
+      title: "All users"
+      age: "%{age} years old"
+      member_since: "Member since %{date}"
     new:
       title: "Sign up"
       name: "Name"
@@ -12,11 +16,34 @@ en:
     create:
       user_created_successfully: "Welcome! Your account has been created successfully."
       user_creation_failed: "There was a problem creating your account. Please check the errors below."
+    edit:
+      title: "Update your profile"
+      name: "Name"
+      email: "Email"
+      birthday: "Birthday"
+      gender: "Gender"
+      select_gender: "Select gender"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      save_changes: "Save changes"
+      change_gravatar: "Change"
+      user_not_found: "User not found."
+    update:
+      user_updated_successfully: "Profile updated successfully!"
+      user_update_failed: "There was a problem updating your profile. Please check the errors below."
+      user_not_found: "User not found."
+    destroy:
+      user_deleted_successfully: "User deleted successfully."
+      delete_failed: "Delete failed!"
+    user:
+      delete: "delete"
+      delete_confirmation: "You sure?"
     show:
       profile: "Profile"
       user_not_found: "User not found."
       created_at: "Member since"
       updated_at: "Last updated"
+      edit_profile: "Edit profile"
     gender:
       female: "Female"
       male: "Male"

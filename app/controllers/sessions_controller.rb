@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in user
       remember_user_if_needed(user)
       flash[:success] = t(".login_success")
-      redirect_to user
+      redirect_back_or user
     else
       flash.now[:danger] = t(".login_failed")
       render :new, status: :unprocessable_entity
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     if params.dig(:session, :remember_me) == Settings.session.remember_me_value
       remember user
     else
-      # Chỉ clear cookies, không clear remember_digest vì cần cho session authentication
+      # Only clear cookies, do not clear remember_digest
       cookies.delete(:user_id)
       cookies.delete(:remember_token)
     end

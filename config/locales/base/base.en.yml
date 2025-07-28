@@ -5,6 +5,7 @@ en:
   navigation:
     home: "Home"
     microposts: "Microposts"
+    users: "Users"
     help: "Help"
     about: "About"
     contact: "Contact"
@@ -15,6 +16,10 @@ en:
     profile: "Profile"
     settings: "Settings"
     logout: "Log out"
+  application:
+    please_log_in: "Please log in."
+    access_denied: "Access denied."
+    admin_required: "Admin access required."
   pages:
     home:
       welcome: "Welcome to the Sample App"
