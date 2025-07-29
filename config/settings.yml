@@ -37,6 +37,13 @@ session:
 email:
   from_address: "noreply@railstutorial.org"
   support_address: "support@railstutorial.org"
+  subjects:
+    account_activation: "Account activation"
+    password_reset: "Password reset"
+  delivery_methods:
+    test: "test"
+    smtp: "smtp"
+    sendmail: "sendmail"
 
 # Cấu hình alert classes
 alert:

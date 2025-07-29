@@ -63,6 +63,9 @@ gem "bcrypt", "3.1.18"
 # Pagination
 gem "pagy", "9.3.3"
 
+# Environment variables management
+gem "figaro"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html
   gem "debug", platforms: %i(mri mingw x64_mingw)

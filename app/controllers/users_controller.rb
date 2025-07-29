@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i(edit update destroy)
+  before_action :check_logged_in_user, only: %i(edit update destroy)
   before_action :load_user, only: %i(show edit update destroy)
-  before_action :correct_user, only: %i(edit update)
-  before_action :admin_user, only: %i(destroy)
+  before_action :check_correct_user, only: %i(edit update)
+  before_action :check_admin_user, only: %i(destroy)
 
   # GET /users
   def index
@@ -22,9 +22,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      log_in @user
-      flash[:success] = t(".user_created_successfully")
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t(".check_email_to_activate")
+      redirect_to root_path
     else
       flash.now[:error] = t(".user_creation_failed")
       render :new, status: :unprocessable_entity
@@ -61,14 +61,6 @@ class UsersController < ApplicationController
     params.require(:user).permit User::USER_PERMIT
   end
 
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t("application.please_log_in")
-    redirect_to login_path
-  end
-
   def load_user
     @user = User.find_by(id: params[:id])
     return if @user
@@ -77,17 +69,25 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def correct_user
-    return if current_user?(@user)
+  def check_logged_in_user
+    return if logged_in?
 
-    flash[:danger] = t("application.access_denied")
-    redirect_to root_path
+    store_location
+    flash[:danger] = t("application.please_log_in")
+    redirect_to login_path
   end
 
-  def admin_user
+  def check_admin_user
     return if current_user&.admin?
 
     flash[:danger] = t("application.admin_required")
+    redirect_to root_path
+  end
+
+  def check_correct_user
+    return if current_user?(@user)
+
+    flash[:danger] = t("application.access_denied")
     redirect_to root_path
   end
 end

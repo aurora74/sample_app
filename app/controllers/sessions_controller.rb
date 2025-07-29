@@ -1,20 +1,18 @@
 class SessionsController < ApplicationController
+  before_action :find_user, only: %i(create)
+  before_action :check_user_authentication, only: %i(create)
+  before_action :check_user_activation, only: %i(create)
+
   # GET /login
   def new; end
 
   # POST /login
   def create
-    user = User.find_by(email: params.dig(:session, :email)&.downcase)
-    if user&.authenticate(params.dig(:session, :password))
-      reset_session
-      log_in user
-      remember_user_if_needed(user)
-      flash[:success] = t(".login_success")
-      redirect_back_or user
-    else
-      flash.now[:danger] = t(".login_failed")
-      render :new, status: :unprocessable_entity
-    end
+    reset_session
+    log_in @user
+    remember_user_if_needed(@user)
+    flash[:success] = t(".login_success")
+    redirect_back_or @user
   end
 
   # DELETE /logout
@@ -25,6 +23,28 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def find_user
+    @user = User.find_by(email: params.dig(:session, :email)&.downcase)
+    return if @user
+
+    flash.now[:danger] = t(".user_not_found")
+    render :new, status: :unprocessable_entity
+  end
+
+  def check_user_authentication
+    return if @user&.authenticate(params.dig(:session, :password))
+
+    flash.now[:danger] = t(".login_failed")
+    render :new, status: :unprocessable_entity
+  end
+
+  def check_user_activation
+    return if @user.activated?
+
+    flash[:warning] = t(".account_not_activated")
+    redirect_to root_path
+  end
 
   def remember_user_if_needed user
     if params.dig(:session, :remember_me) == Settings.session.remember_me_value

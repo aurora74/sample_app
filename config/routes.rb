@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :microposts, only: %i[index]
   resources :users, only: %i[index show new create edit update destroy]
+  resources :account_activations, only: %i[edit]
   
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"

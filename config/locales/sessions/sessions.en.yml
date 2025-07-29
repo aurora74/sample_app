@@ -11,5 +11,6 @@ en:
     create:
       login_success: "Welcome back!"
       login_failed: "Invalid email/password combination"
+      account_not_activated: "Account not activated. Check your email for the activation link."
     destroy:
       logout_success: "You have been logged out"

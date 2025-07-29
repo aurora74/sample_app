@@ -1,0 +1,12 @@
+en:
+  account_activations:
+    edit:
+      account_activated: "Account activated successfully!"
+      invalid_activation_link: "Invalid activation link"
+      account_already_activated: "Account already activated"
+  user_mailer:
+    account_activation:
+      greeting: "Hi %{name},"
+      welcome_message: "Welcome to the Sample App! Click on the link below to activate your account:"
+      activate: "Activate"
+      click_link: "Click on the link below to activate your account"
