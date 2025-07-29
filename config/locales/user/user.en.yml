@@ -14,7 +14,7 @@ en:
       password_confirmation: "Confirmation"
       create_account: "Create my account"
     create:
-      user_created_successfully: "Welcome! Your account has been created successfully."
+      check_email_to_activate: "Please check your email to activate your account."
       user_creation_failed: "There was a problem creating your account. Please check the errors below."
     edit:
       title: "Update your profile"

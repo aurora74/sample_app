@@ -2,13 +2,15 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 # Create a main sample user (admin)
-User.create!(name: "Example User",
-             email: "example@railstutorial.org",
-             password: "foobar",
-             password_confirmation: "foobar",
+User.create!(name: "Admin",
+             email: "admin@gmail.com",
+             password: "123123",
+             password_confirmation: "123123",
              birthday: 25.years.ago,
              gender: "male",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 # Generate a bunch of additional users
 99.times do |n|
@@ -22,7 +24,9 @@ User.create!(name: "Example User",
                password: password,
                password_confirmation: password,
                birthday: birthday,
-               gender: gender)
+               gender: gender,
+               activated: true,
+               activated_at: Time.zone.now)
 end
 
 # Create sample microposts

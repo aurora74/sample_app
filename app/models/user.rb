@@ -14,8 +14,9 @@ gender).freeze
   scope :latest_first, -> {order(created_at: :desc)}
 
   before_save{self.email = email.downcase}
+  before_create :create_activation_digest
 
-  attr_accessor :remember_token, :session_token
+  attr_accessor :remember_token, :session_token, :activation_token
 
   class << self
     def digest string
@@ -56,10 +57,26 @@ gender).freeze
     self.session_token = nil
   end
 
-  def authenticated? token
-    return false if remember_digest.nil?
+  def authenticated? attribute, token
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
 
-    BCrypt::Password.new(remember_digest).is_password?(token)
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  private
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 
   validates :name, presence: true,

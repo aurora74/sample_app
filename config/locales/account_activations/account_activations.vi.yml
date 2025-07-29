@@ -1,0 +1,12 @@
+vi:
+  account_activations:
+    edit:
+      account_activated: "Tài khoản đã được kích hoạt thành công!"
+      invalid_activation_link: "Liên kết kích hoạt không hợp lệ"
+      account_already_activated: "Tài khoản đã được kích hoạt rồi"
+  user_mailer:
+    account_activation:
+      greeting: "Xin chào %{name},"
+      welcome_message: "Chào mừng bạn đến với Sample App! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+      activate: "Kích hoạt"
+      click_link: "Nhấp vào liên kết bên dưới để kích hoạt tài khoản"

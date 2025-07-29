@@ -11,5 +11,6 @@ vi:
     create:
       login_success: "Chào mừng trở lại!"
       login_failed: "Email/mật khẩu không hợp lệ"
+      account_not_activated: "Tài khoản chưa được kích hoạt. Kiểm tra email để lấy liên kết kích hoạt."
     destroy:
       logout_success: "Bạn đã đăng xuất"

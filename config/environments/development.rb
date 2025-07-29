@@ -37,7 +37,20 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+  config.action_mailer.smtp_settings = {
+    address: ENV["MAIL_ADDRESS"],
+    port: ENV["MAIL_PORT"].to_i,
+    domain: ENV["MAIL_DOMAIN"],
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"],
+    authentication: ENV["MAIL_AUTHENTICATION"],
+    enable_starttls_auto: ENV["MAIL_ENABLE_STARTTLS_AUTO"] == "true",
+    openssl_verify_mode: "none"
+  }
 
   config.action_mailer.perform_caching = false
 
