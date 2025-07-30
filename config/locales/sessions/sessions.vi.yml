@@ -8,9 +8,13 @@ vi:
       login_button: "Đăng nhập"
       new_user: "Người dùng mới?"
       signup_now: "Đăng ký ngay!"
+      forgot_password: "Quên mật khẩu?"
     create:
       login_success: "Chào mừng trở lại!"
+      user_not_found: "Không tìm thấy người dùng"
       login_failed: "Email/mật khẩu không hợp lệ"
       account_not_activated: "Tài khoản chưa được kích hoạt. Kiểm tra email để lấy liên kết kích hoạt."
     destroy:
       logout_success: "Bạn đã đăng xuất"
+    logout_and_login:
+      password_changed_please_login: "Mật khẩu của bạn đã được thay đổi thành công. Vui lòng đăng nhập bằng mật khẩu mới."

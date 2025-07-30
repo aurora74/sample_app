@@ -11,7 +11,10 @@ module ApplicationHelper
     current_locale = I18n.locale.to_s
     css_class = current_locale == locale_key.to_s ? "active" : ""
 
-    link_to locale_name, url_for(locale: locale_key), class: css_class
+    # Preserve current parameters when switching locale
+    current_params = params.except(:locale, :controller, :action).permit!
+    link_to locale_name, url_for(current_params.merge(locale: locale_key)),
+            class: css_class
   end
 
   def alert_class_for message_type

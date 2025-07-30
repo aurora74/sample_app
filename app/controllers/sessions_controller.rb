@@ -22,6 +22,13 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  # GET /logout_and_login
+  def logout_and_login
+    log_out if logged_in?
+    flash[:info] = t(".password_changed_please_login")
+    redirect_to login_path
+  end
+
   private
 
   def find_user

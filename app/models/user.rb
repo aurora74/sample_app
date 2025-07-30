@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   USER_PERMIT = %i(name email password password_confirmation birthday
 gender).freeze
+  PASSWORD_RESET_PERMIT = %i(password password_confirmation).freeze
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   MAX_NAME_LENGTH = 50
   MAX_EMAIL_LENGTH = 255
@@ -16,7 +17,7 @@ gender).freeze
   before_save{self.email = email.downcase}
   before_create :create_activation_digest
 
-  attr_accessor :remember_token, :session_token, :activation_token
+  attr_accessor :remember_token, :session_token, :activation_token, :reset_token
 
   class << self
     def digest string
@@ -70,6 +71,28 @@ gender).freeze
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  # Creates and assigns the reset token and digest
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns(reset_digest: User.digest(reset_token),
+                   reset_sent_at: Time.zone.now)
+  end
+
+  # Sends password reset email
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  # Sends password reset confirmation email
+  def send_password_reset_confirmation_email
+    UserMailer.password_reset_confirmation(self).deliver_now
+  end
+
+  # Returns true if a password reset has expired
+  def password_reset_expired?
+    reset_sent_at < Settings.password_reset.expires_in.hours.ago
   end
 
   private

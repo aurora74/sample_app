@@ -1,5 +1,9 @@
 <h1><%= Settings.app.name %></h1>
+
 <p><%= t(".greeting", name: @user.name) %></p>
+
 <p><%= t(".welcome_message") %></p>
+
 <%= link_to t(".activate"), edit_account_activation_url(id: @user.activation_token,
-email: @user.email), class: "btn btn-primary" %>
+                                                            email: @user.email,
+                                                            locale: I18n.locale), class: "btn btn-primary" %>
