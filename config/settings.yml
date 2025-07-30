@@ -33,6 +33,10 @@ session:
   remember_me_value: "1"
   remember_token_expires: 2592000 # 30 days in seconds
 
+# Cấu hình password reset
+password_reset:
+  expires_in: 2 # hours
+
 # Cấu hình email
 email:
   from_address: "noreply@railstutorial.org"
@@ -40,6 +44,7 @@ email:
   subjects:
     account_activation: "Account activation"
     password_reset: "Password reset"
+    password_reset_confirmation: "Password successfully changed"
   delivery_methods:
     test: "test"
     smtp: "smtp"

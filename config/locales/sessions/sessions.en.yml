@@ -8,9 +8,13 @@ en:
       login_button: "Log in"
       new_user: "New user?"
       signup_now: "Sign up now!"
+      forgot_password: "Forgot password?"
     create:
       login_success: "Welcome back!"
+      user_not_found: "User not found"
       login_failed: "Invalid email/password combination"
       account_not_activated: "Account not activated. Check your email for the activation link."
     destroy:
       logout_success: "You have been logged out"
+    logout_and_login:
+      password_changed_please_login: "Your password has been changed successfully. Please log in with your new password."

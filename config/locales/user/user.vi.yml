@@ -48,6 +48,19 @@ vi:
       female: "Nữ"
       male: "Nam"
       other: "Khác"
+  user_mailer:
+    password_reset:
+      greeting: "Xin chào %{name},"
+      reset_message: "Để đặt lại mật khẩu, vui lòng nhấp vào liên kết bên dưới:"
+      reset_password: "Đặt lại mật khẩu"
+      link_expires: "Liên kết này sẽ hết hạn sau %{hours} giờ."
+      ignore_message: "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này và mật khẩu của bạn sẽ giữ nguyên như cũ."
+    password_reset_confirmation:
+      greeting: "Xin chào %{name},"
+      success_message: "Bạn đã thay đổi mật khẩu thành công!"
+      sign_in_again: "Đăng nhập lại để chúng tôi biết đó là bạn!"
+      click_here: "Nhấp vào đây"
+      security_notice: "Nếu bạn không thực hiện thay đổi này, vui lòng liên hệ đội hỗ trợ của chúng tôi ngay lập tức."
   shared:
     error_messages:
       form_contains: "Biểu mẫu chứa"

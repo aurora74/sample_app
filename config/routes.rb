@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :microposts, only: %i[index]
   resources :users, only: %i[index show new create edit update destroy]
   resources :account_activations, only: %i[edit]
+  resources :password_resets, only: %i[new create edit update]
   
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/logout_and_login", to: "sessions#logout_and_login"
   end
 end
