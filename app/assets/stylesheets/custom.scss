@@ -146,12 +146,19 @@ footer {
     padding: 10px 0;
   }
 
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+
   .content {
     display: block;
     margin-left: 60px;
 
     img {
       display: block;
+      height: auto;
+      max-width: 100%;
       padding: 5px 0;
     }
   }
@@ -215,6 +222,11 @@ aside {
       margin-top: 0;
       text-align: left;
     }
+  }
+
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
 }
 
@@ -294,4 +306,14 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+span.text-muted {
+  display: block;
+  margin-bottom: 5px;
+}
+
+span.image {
+  margin-bottom: 10px;
+  margin-top: 5px;
 }

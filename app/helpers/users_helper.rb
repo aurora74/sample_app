@@ -1,8 +1,5 @@
 module UsersHelper
-  GRAVATAR_DEFAULT_SIZE = 80
-  GRAVATAR_SMALL_SIZE = 50
-
-  def gravatar_for user, options = {size: GRAVATAR_DEFAULT_SIZE}
+  def gravatar_for user, options = {size: Settings.gravatar.default_size}
     size = options[:size]
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     gravatar_url = "#{Settings.urls.gravatar}#{gravatar_id}?s=#{size}"

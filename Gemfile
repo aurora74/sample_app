@@ -52,7 +52,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 gem "bootstrap-sass", "3.4.1"
 
@@ -65,6 +65,9 @@ gem "pagy", "9.3.3"
 
 # Environment variables management
 gem "figaro"
+
+# I18n for JavaScript
+gem "i18n-js", "~> 3.9.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html

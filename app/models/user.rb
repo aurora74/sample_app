@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :microposts, dependent: :destroy
 
   USER_PERMIT = %i(name email password password_confirmation birthday
 gender).freeze

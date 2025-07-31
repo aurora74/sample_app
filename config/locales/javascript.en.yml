@@ -1,0 +1,5 @@
+en:
+  javascript:
+    image_upload:
+      file_size_error: "Maximum file size is %{size}MB. Please choose a smaller file."
+      invalid_format: "Please choose a valid image file (JPG, JPEG, PNG, GIF)."

@@ -10,7 +10,10 @@ class UsersController < ApplicationController
   end
 
   # GET /users/:id
-  def show; end
+  def show
+    @pagy, @microposts = pagy(@user.microposts.newest,
+                              items: Settings.pagy.page_10)
+  end
 
   # GET /signup
   def new
