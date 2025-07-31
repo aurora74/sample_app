@@ -1,0 +1,21 @@
+vi:
+  microposts:
+    index:
+      title: "Tất cả Microposts"
+      no_microposts: "Chưa có micropost nào"
+    create:
+      micropost_created_successfully: "Tạo micropost thành công!"
+      micropost_creation_failed: "Tạo micropost thất bại"
+    destroy:
+      micropost_deleted_successfully: "Xóa micropost thành công"
+      micropost_deletion_failed: "Xóa micropost thất bại"
+      micropost_not_found: "Không tìm thấy micropost"
+    form:
+      post: "Đăng"
+      content_placeholder: "Bạn đang nghĩ gì?"
+      characters_remaining: "ký tự còn lại"
+    micropost:
+      posted: "Đăng lúc"
+      ago: "trước"
+      delete: "xóa"
+      confirm_delete: "Bạn có chắc muốn xóa micropost này?"

@@ -1,0 +1,21 @@
+en:
+  microposts:
+    index:
+      title: "All Microposts"
+      no_microposts: "No microposts yet"
+    create:
+      micropost_created_successfully: "Micropost created successfully!"
+      micropost_creation_failed: "Failed to create micropost"
+    destroy:
+      micropost_deleted_successfully: "Micropost deleted successfully"
+      micropost_deletion_failed: "Failed to delete micropost"
+      micropost_not_found: "Micropost not found"
+    form:
+      post: "Post"
+      content_placeholder: "What's happening?"
+      characters_remaining: "characters remaining"
+    micropost:
+      posted: "Posted"
+      ago: "ago"
+      delete: "delete"
+      confirm_delete: "Are you sure you want to delete this micropost?"

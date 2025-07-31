@@ -33,4 +33,15 @@ module ApplicationHelper
       "alert-#{message_type}"
     end
   end
+
+  # Export Settings to JavaScript
+  def javascript_settings_tag
+    settings_data = {
+      micropost: {
+        max_image_size: Settings.micropost.max_image_size,
+        allowed_mime_types: Settings.micropost.allowed_mime_types
+      }
+    }
+    tag.script "window.Settings = #{settings_data.to_json};".html_safe
+  end
 end

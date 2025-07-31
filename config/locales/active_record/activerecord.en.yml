@@ -8,6 +8,9 @@ en:
         gender: "Gender"
         password: "Password"
         password_confirmation: "Password confirmation"
+      micropost:
+        content: "Content"
+        image: "Image"
     errors:
       models:
         user:
@@ -27,3 +30,8 @@ en:
               blank: "can't be blank"
             password:
               too_short: "is too short (minimum is %{count} characters)"
+        micropost:
+          attributes:
+            image:
+              invalid_format: "must be a valid image format"
+              too_large: "should be less than %{size}MB"
