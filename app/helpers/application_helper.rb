@@ -34,14 +34,16 @@ module ApplicationHelper
     end
   end
 
-  # Export Settings to JavaScript
+  # Export Settings and current locale to JavaScript
   def javascript_settings_tag
     settings_data = {
       micropost: {
         max_image_size: Settings.micropost.max_image_size,
         allowed_mime_types: Settings.micropost.allowed_mime_types
-      }
+      },
+      locale: I18n.locale.to_s
     }
-    tag.script "window.Settings = #{settings_data.to_json};".html_safe
+    tag.script "window.Settings = #{settings_data.to_json}
+    ; window.currentLocale = '#{I18n.locale}';".html_safe
   end
 end
