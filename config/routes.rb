@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
   root "microposts#index"
   
-  resources :microposts, only: %i[index]
+  resources :microposts, only: %i[index create destroy]
   resources :users, only: %i[index show new create edit update destroy]
   resources :account_activations, only: %i[edit]
   resources :password_resets, only: %i[new create edit update]

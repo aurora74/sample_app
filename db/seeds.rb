@@ -29,9 +29,9 @@ User.create!(name: "Admin",
                activated_at: Time.zone.now)
 end
 
-# Create sample microposts
-Micropost.create!(content: "First micropost! Hello world!")
-Micropost.create!(content: "Learning Ruby on Rails is awesome!")
-Micropost.create!(content: "This is my third micropost. Building a sample app.")
-Micropost.create!(content: "Rails makes web development fun and easy!")
-Micropost.create!(content: "Just finished implementing the microposts feature!")
+# Generate microposts for a subset of users
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.microposts.create!(content: content) }
+end

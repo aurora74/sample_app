@@ -44,6 +44,7 @@ en:
       created_at: "Member since"
       updated_at: "Last updated"
       edit_profile: "Edit profile"
+      view_my_profile: "View my profile"
     gender:
       female: "Female"
       male: "Male"

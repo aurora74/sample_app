@@ -38,6 +38,7 @@ vi:
       created_at: "Thành viên từ"
       updated_at: "Cập nhật lần cuối"
       edit_profile: "Chỉnh sửa hồ sơ"
+      view_my_profile: "Xem hồ sơ của tôi"
     destroy:
       user_deleted_successfully: "Người dùng đã được xóa thành công."
       delete_failed: "Xóa thất bại!"
