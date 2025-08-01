@@ -26,7 +26,14 @@ pagy:
 micropost:
   max_content_length: 140
   allowed_image_types: ["jpg", "jpeg", "gif", "png"]
+  allowed_mime_types: ["image/jpeg", "image/jpg", "image/gif", "image/png"]
+  allowed_mime_types_string: "image/jpeg,image/gif,image/png"
   max_image_size: 5 # MB
+
+# Cấu hình gravatar
+gravatar:
+  default_size: 80
+  small_size: 50
 
 # Cấu hình session
 session:

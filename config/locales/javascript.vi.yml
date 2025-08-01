@@ -1,0 +1,5 @@
+vi:
+  javascript:
+    image_upload:
+      file_size_error: "Kích thước file tối đa là %{size}MB. Vui lòng chọn file nhỏ hơn."
+      invalid_format: "Vui lòng chọn file hình ảnh hợp lệ (JPG, JPEG, PNG, GIF)."

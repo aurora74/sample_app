@@ -8,6 +8,9 @@ vi:
         gender: "Giới tính"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+      micropost:
+        content: "Nội dung"
+        image: "Hình ảnh"
     errors:
       models:
         user:
@@ -27,3 +30,8 @@ vi:
               blank: "không được để trống"
             password:
               too_short: "quá ngắn (tối thiểu %{count} ký tự)"
+        micropost:
+          attributes:
+            image:
+              invalid_format: "phải là định dạng hình ảnh hợp lệ"
+              too_large: "không được vượt quá %{size}MB"

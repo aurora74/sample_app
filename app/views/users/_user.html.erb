@@ -1,5 +1,5 @@
 <li>
-  <%= gravatar_for user, size: UsersHelper::GRAVATAR_SMALL_SIZE %>
+  <%= gravatar_for user, size: Settings.gravatar.small_size %>
   <%= link_to user.name, user %>
   <% if can_delete_user?(user) %>
     | <%= link_to t(".delete"), user, data: { "turbo-method": :delete,
