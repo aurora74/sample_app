@@ -35,6 +35,12 @@ gravatar:
   default_size: 80
   small_size: 50
 
+# Cấu hình Rails logo
+rails_logo:
+  filename: "rails.svg"
+  alt_text: "Rails logo"
+  width: "200"
+
 # Cấu hình session
 session:
   remember_me_value: "1"

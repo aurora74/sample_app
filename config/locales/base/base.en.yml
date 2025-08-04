@@ -47,6 +47,7 @@ en:
       welcome: "Welcome to the Sample App"
       description: "This is the home page for the %{tutorial} sample application."
       tutorial_link: "Ruby on Rails Tutorial"
+      status_feed: "Status Feed"
     help:
       title: "Help"
       description: "Get help on the Ruby on Rails Tutorial at the %{help_link}."
@@ -70,3 +71,23 @@ en:
     tutorial_text: "The %{tutorial_link} by %{author_link}"
     tutorial_link_text: "Ruby on Rails Tutorial"
     author_link_text: "Michael Hartl"
+  shared:
+    stats:
+      following: "following"
+      followers: "followers"
+    feed:
+      no_posts_yet: "No posts yet! Start following some users or post your own micropost."
+  users:
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    index:
+      following: "Following"
+      followers: "Followers"
+  relationships:
+    create:
+      user_not_found: "User not found."
+    destroy:
+      relationship_not_found: "Relationship not found."
+      user_not_found: "User not found."

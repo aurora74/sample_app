@@ -1,0 +1,2 @@
+<%= turbo_stream.update "follow_form", render("users/follow", user: @user) %>
+<%= turbo_stream.update "followers", @user.followers.count %>

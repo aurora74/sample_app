@@ -1,0 +1,7 @@
+<%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), 
+                html: { method: :delete }, 
+                remote: true, 
+                local: false, 
+                data: { turbo_method: :delete }) do |f| %>
+  <%= f.submit t(".unfollow"), class: "btn btn-outline-primary" %>
+<% end %>

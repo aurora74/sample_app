@@ -39,6 +39,10 @@ vi:
       updated_at: "Cập nhật lần cuối"
       edit_profile: "Chỉnh sửa hồ sơ"
       view_my_profile: "Xem hồ sơ của tôi"
+    following:
+      following: "Đang theo dõi"
+    followers:
+      followers: "Người theo dõi"
     destroy:
       user_deleted_successfully: "Người dùng đã được xóa thành công."
       delete_failed: "Xóa thất bại!"

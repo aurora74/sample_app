@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-  root "microposts#index"
+  root "static_pages#home"
   
   resources :microposts, only: %i[index create destroy]
-  resources :users, only: %i[index show new create edit update destroy]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :account_activations, only: %i[edit]
   resources :password_resets, only: %i[new create edit update]
+  resources :relationships, only: %i[create destroy]
   
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
