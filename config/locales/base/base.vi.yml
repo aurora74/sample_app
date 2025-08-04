@@ -47,6 +47,7 @@ vi:
       welcome: "Chào mừng đến với Ứng dụng Mẫu"
       description: "Đây là trang chủ cho ứng dụng mẫu %{tutorial}."
       tutorial_link: "Ruby on Rails Tutorial"
+      status_feed: "Bảng Tin"
     help:
       title: "Trợ giúp"
       description: "Nhận trợ giúp về Ruby on Rails Tutorial tại %{help_link}."
@@ -70,3 +71,23 @@ vi:
     tutorial_text: "%{tutorial_link} bởi %{author_link}"
     tutorial_link_text: "Ruby on Rails Tutorial"
     author_link_text: "Michael Hartl"
+  shared:
+    stats:
+      following: "đang theo dõi"
+      followers: "người theo dõi"
+    feed:
+      no_posts_yet: "Chưa có bài đăng nào! Hãy bắt đầu theo dõi một số người dùng hoặc đăng micropost của riêng bạn."
+  users:
+    follow:
+      follow: "Theo dõi"
+    unfollow:
+      unfollow: "Bỏ theo dõi"
+    index:
+      following: "Đang theo dõi"
+      followers: "Người theo dõi"
+  relationships:
+    create:
+      user_not_found: "Không tìm thấy người dùng."
+    destroy:
+      relationship_not_found: "Không tìm thấy mối quan hệ."
+      user_not_found: "Không tìm thấy người dùng."

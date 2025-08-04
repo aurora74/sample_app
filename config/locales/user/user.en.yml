@@ -45,6 +45,10 @@ en:
       updated_at: "Last updated"
       edit_profile: "Edit profile"
       view_my_profile: "View my profile"
+    following:
+      following: "Following"
+    followers:
+      followers: "Followers"
     gender:
       female: "Female"
       male: "Male"

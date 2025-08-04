@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :check_logged_in_user, only: %i(edit update destroy)
-  before_action :load_user, only: %i(show edit update destroy)
+  before_action :check_logged_in_user,
+                only: %i(edit update destroy following followers)
+  before_action :load_user,
+                only: %i(show edit update destroy following followers)
   before_action :check_correct_user, only: %i(edit update)
   before_action :check_admin_user, only: %i(destroy)
 
@@ -56,6 +58,22 @@ class UsersController < ApplicationController
       flash[:danger] = t(".delete_failed")
     end
     redirect_to users_path
+  end
+
+  # GET /users/:id/following
+  def following
+    @title = t(".following")
+    @pagy, @users = pagy(@user.following.latest_first,
+                         items: Settings.pagy.page_10)
+    render "show_follow"
+  end
+
+  # GET /users/:id/followers
+  def followers
+    @title = t(".followers")
+    @pagy, @users = pagy(@user.followers.latest_first,
+                         items: Settings.pagy.page_10)
+    render "show_follow"
   end
 
   private

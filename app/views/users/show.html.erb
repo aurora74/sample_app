@@ -14,7 +14,15 @@
       <% if @user.birthday.present? %>
         <p><strong><%= t("users.new.birthday") %>:</strong> <%= l(@user.birthday, format: :long) %></p>
       <% end %>
-      <%= link_to t(".edit_profile"), edit_user_path(@user), class: "btn btn-primary" %>
+      <% if current_user?(@user) %>
+        <%= link_to t(".edit_profile"), edit_user_path(@user), class: "btn btn-primary" %>
+      <% end %>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+      <% if logged_in? && !current_user?(@user) %>
+        <%= render "follow_form", user: @user %>
+      <% end %>
     </section>
   </aside>
   <div class="col-md-8">
